@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="590" viewBox="0 0 720 590">
+  <defs><mask id="vehicle" x="0" y="0" width="720" height="590" maskUnits="userSpaceOnUse" style="mask-type:luminance">
+    <rect width="720" height="590" fill="white"/>
+    <g transform="translate(0 -690)" fill="black">
+      <path d="M463 744C488 739 632 739 655 747C677 755 686 773 682 797L621 1173C615 1205 600 1223 582 1224L407 1194C387 1189 380 1175 384 1151L447 779C450 761 455 751 463 744Z"/>
+      <path d="M272 1137 285 1130 341 1121 391 1116 640 1074 720 1058V1280H244Z"/>
+    </g>
+  </mask></defs>
+  <rect width="720" height="590" fill="white" mask="url(#vehicle)"/>
+</svg>

@@ -1,4 +1,5 @@
 import { validateContactFields, buildContactWhatsAppUrl } from './assets/contact-form.js';
+import { initHeroMobileCarousel } from './assets/hero-mobile-carousel.js';
 
 // Keep the supplied official commercial destinations together.
 const TRACKIG_CONFIG = Object.freeze({
@@ -143,3 +144,4 @@ contactForm.addEventListener('submit', (event) => {
 // Keep native submission inactive until validation is connected. With JavaScript
 // unavailable, the disabled submit and noscript link prevent a data-bearing GET.
 contactForm.querySelector('button[type="submit"]').disabled = false;
+initHeroMobileCarousel();

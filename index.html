@@ -16,6 +16,7 @@
   <div class="hero-shell">
     <div class="hero-photo" aria-hidden="true"></div>
     <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-mobile-ambient" aria-hidden="true"></div>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="TrackIG — Início"><span class="sr-only">TrackIG</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
@@ -28,13 +29,23 @@
       <button class="customer-button" type="button" data-action="customer"><svg viewBox="0 0 28 30" fill="none" aria-hidden="true"><circle cx="14" cy="8" r="5"/><path d="M4 27v-3a10 10 0 0 1 20 0v3"/></svg><span>Área do cliente</span></button>
     </header>
     <main id="inicio" class="hero-content">
-      <h1><span class="headline-text sr-only"><span class="headline-line line-one">CONTROLE</span> <span class="headline-line line-two">TOTAL <em>EM</em></span> <span class="headline-line line-three"><em>TEMPO REAL</em></span></span><img class="hero-headline" src="assets/hero-headline.svg" width="668" height="206" alt="" aria-hidden="true" onerror="this.closest('h1').classList.add('headline-fallback')"></h1>
-      <p class="hero-description">Seu veículo mais seguro, onde você estiver.<br class="desktop-break"> Tecnologia de rastreamento que te mantém no controle.</p>
+      <h1><span class="headline-text sr-only"><span class="headline-line line-one">CONTROLE</span> <span class="headline-line line-two">TOTAL <em>EM</em></span> <span class="headline-line line-three"><em>TEMPO REAL</em></span></span><picture><source media="(max-width:767px)" srcset="assets/hero-mobile-headline.svg"><img class="hero-headline" src="assets/hero-headline.svg" width="668" height="206" alt="" aria-hidden="true" onerror="this.closest('h1').classList.add('headline-fallback')"></picture></h1>
+      <p class="hero-description">Seu veículo mais seguro, onde<br class="hero-mobile-break"> você estiver.<br class="desktop-break"> Tecnologia<br class="hero-mobile-break"> de rastreamento que te mantém<br class="hero-mobile-break"> no controle.</p>
       <div class="hero-actions">
         <a class="cta cta-primary" href="https://wa.me/5585991318582" target="_blank" rel="noopener noreferrer" data-action="protect">Quero proteger meu veículo <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17M14 5l7 7-7 7"/></svg></a>
         <a class="cta cta-secondary" href="https://wa.me/5585991318582" target="_blank" rel="noopener noreferrer" data-action="contact"><svg class="whatsapp-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m5 25-2 6 7-2a13 13 0 1 0-5-4Z"/><path d="M11 9c-1-1-2 0-2 2 0 5 7 12 12 11 2-1 3-3 2-4l-4-2-2 2c-3-1-5-3-6-6l2-1-2-2Z"/></svg>Falar com um especialista</a>
       </div>
     </main>
+    <section class="hero-mobile-carousel" aria-label="Veículos TrackIG" aria-roledescription="carrossel" data-vehicle="motorcycle">
+      <div class="hero-mobile-base" role="img" aria-label="Moto com rastreamento TrackIG e celular ilustrativo, em cenário escuro."></div>
+      <div class="hero-mobile-car" aria-hidden="true"></div>
+      <div class="hero-mobile-controls" hidden>
+        <button type="button" data-hero-previous aria-label="Mostrar veículo anterior"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+        <button type="button" data-hero-toggle aria-label="Pausar alternância automática" aria-pressed="false"><svg class="hero-mobile-pause-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="hero-mobile-play-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg></button>
+        <button type="button" data-hero-next aria-label="Mostrar próximo veículo"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg></button>
+      </div>
+      <span class="hero-mobile-announcement sr-only" aria-live="polite" aria-atomic="true"></span>
+    </section>
   </div>
   <section class="technology-section" id="tecnologia" aria-labelledby="technology-heading" tabindex="-1">
     <div class="technology-corner-dots" aria-hidden="true"></div><div class="technology-corner-dots technology-corner-dots-right" aria-hidden="true"></div>
