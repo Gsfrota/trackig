@@ -48,6 +48,9 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
 @media(width > 1050px) and (aspect-ratio < 1672/941){
  .hero-photo,.hero-art{left:auto;right:0;transform:none}
 }
+@media(width > 1050px) and (width <= 1250px) and (aspect-ratio < 1672/941){
+ .hero-shell::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.68) 55%,transparent 74%)}
+}
 @media(max-width:1050px){
  :root{--u:1px}
  .hero-shell{min-height:100svh}
