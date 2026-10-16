@@ -24,7 +24,10 @@ button:focus-visible,a:focus-visible{outline:3px solid #71b9ff;outline-offset:6p
 .customer-button svg{width:calc(27 * var(--u));height:calc(29 * var(--u));stroke:currentColor;stroke-width:2.2}
 .menu-toggle{display:none}
 .hero-content{position:relative;margin:calc(166 * var(--u)) 0 0 calc(83 * var(--u));width:calc(700 * var(--u));padding-bottom:calc(100 * var(--u))}
-h1{position:relative;top:calc(3 * var(--u));font-family:'Russo One','Arial Black',sans-serif;font-weight:400;font-size:calc(76 * var(--u));line-height:calc(76 * var(--u));letter-spacing:calc(-1.6 * var(--u));margin:0}
+h1{position:relative;height:calc(228 * var(--u));font-family:'Russo One','Arial Black',sans-serif;font-weight:400;font-size:calc(76 * var(--u));line-height:calc(76 * var(--u));letter-spacing:calc(-1.6 * var(--u));margin:0}
+.hero-headline{position:absolute;top:calc(12 * var(--u));left:0;display:block;width:calc(668 * var(--u));height:auto}
+.headline-fallback .headline-text{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}
+.headline-fallback .hero-headline{display:none}
 .headline-line{display:block;white-space:nowrap;transform-origin:left center;width:max-content}
 .line-one{transform:scaleX(1.464)}
 .line-two{transform:scaleX(1.400)}
@@ -68,7 +71,8 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .main-nav a,.main-nav button{padding:13px 0;text-align:left}
  .main-nav .active::after{width:34px;height:2px;bottom:5px}
  .hero-content{margin:54px 22px 0;width:calc(100% - 44px);padding-bottom:360px}
- h1{top:0;font-size:36px;line-height:41px;letter-spacing:-.75px}
+ h1{height:123px;font-size:36px;line-height:41px;letter-spacing:-.75px}
+ .hero-headline{width:min(318px,100%)}
  .line-one{transform:scaleX(1.464)}
  .line-two{transform:scaleX(1.400)}
  .line-three{transform:scaleX(1.385)}
@@ -81,4 +85,4 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .cta-primary svg{width:21px;height:21px}
  .whatsapp-icon{width:25px;height:25px}
 }
-@media(max-width:360px){h1{font-size:32px;line-height:37px}.hero-content{margin-top:42px}.cta-primary,.cta-secondary{width:100%}.brand{width:142px;background-size:1011px 569px;background-position:-43px -17.5px}}
+@media(max-width:360px){h1{height:111px;font-size:32px;line-height:37px}.hero-content{margin-top:42px}.cta-primary,.cta-secondary{width:100%}.brand{width:142px;background-size:1011px 569px;background-position:-43px -17.5px}}
