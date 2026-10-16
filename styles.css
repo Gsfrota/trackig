@@ -169,24 +169,33 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .technology-feature-icon svg{width:27px;height:29px}
  .technology-features h3{font-size:13px}
 }
-@media(max-width:650px){
- .technology-content{padding:24px 0}
- .technology-heading{font-size:clamp(18px,5.3vw,34px);letter-spacing:-.7px}
- .technology-description{margin-top:10px;line-height:23px}
- .technology-map{height:140px;aspect-ratio:auto;margin-top:16px;border-radius:18px}
- .technology-map-crop{left:50%;width:auto;height:100%;transform:translateX(-60%)}
- .technology-features{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:18px}
- .technology-features li{gap:16px;min-height:52px;padding:0}
- .technology-features li>div{padding-top:3px}
- .technology-features li+li{border-left:0}
- .technology-features h3{font-size:13px;line-height:18px}
- .technology-features p{margin-top:4px;font-size:14px;line-height:20px}
- .technology-cta{gap:10px;margin-top:8px;font-size:11px;letter-spacing:1.8px}
-}
-@media(max-width:360px){
- .technology-content{width:calc(100% - 36px)}
- .technology-map{height:130px}
- .technology-map-crop{transform:translateX(-61%)}
+@media(max-width:767px){
+ .technology-section{--t:calc(100vw / 720);background:linear-gradient(155deg,#fcfcff,#f6f8fd)}
+ .technology-section::before{left:calc(-125 * var(--t));top:calc(-100 * var(--t));width:calc(300 * var(--t));height:calc(170 * var(--t));border-radius:0}
+ .technology-section::after{right:calc(-165 * var(--t));bottom:calc(-65 * var(--t));width:calc(300 * var(--t));height:calc(170 * var(--t));border-style:solid;border-radius:0}
+ .technology-corner-dots{top:calc(48 * var(--t));left:calc(25 * var(--t));width:calc(75 * var(--t));height:calc(100 * var(--t));background-size:calc(17 * var(--t)) calc(17 * var(--t))}
+ .technology-corner-dots-right{top:auto;left:auto;right:calc(18 * var(--t));bottom:calc(48 * var(--t));height:calc(75 * var(--t))}
+ .technology-content{width:86.38888889%;padding:calc(84 * var(--t)) 0 calc(52 * var(--t))}
+ .technology-label{font-size:clamp(10px,1.944444vw,14px);line-height:18px;letter-spacing:calc(7 * var(--t))}
+ .technology-heading{width:91.31832797%;margin-top:calc(28 * var(--t));font-size:clamp(18px,5vw,36px);letter-spacing:calc(-1 * var(--t))}
+ .technology-fallback{aspect-ratio:auto}
+ .technology-fallback .technology-title-line{white-space:normal;overflow-wrap:anywhere}
+ .technology-description{max-width:calc(470 * var(--t));margin-top:calc(18 * var(--t));font-size:clamp(14px,3.055556vw,22px);line-height:1.363636}
+ .technology-map{height:auto;aspect-ratio:622/389;margin-top:calc(33 * var(--t));border-radius:calc(28 * var(--t))}
+ .technology-map-crop{top:0;left:0;width:100%;height:100%;aspect-ratio:622/389;transform:none}
+ /* Original 720 × 1280 JPEG; only x50/y325, 622 × 389 is visible. */
+ .technology-map-image{top:-83.54755784%;left:-8.03858521%;width:115.75562701%;height:auto;aspect-ratio:720/1280;background-image:url('assets/technology-mobile-reference.jpg')}
+ .technology-features{grid-template-columns:minmax(0,1fr);gap:calc(14 * var(--t));margin-top:calc(18 * var(--t))}
+ .technology-features li{align-items:center;gap:calc(32 * var(--t));min-height:calc(128 * var(--t));padding:calc(22 * var(--t)) calc(24 * var(--t));border:1px solid #e4e9f2;border-radius:calc(24 * var(--t));background:#ffffff20;box-shadow:0 6px 18px #18396b03}
+ .technology-features li+li{border-left:1px solid #e4e9f2}
+ .technology-feature-icon{width:calc(82 * var(--t));height:calc(82 * var(--t));border:0;border-radius:calc(25 * var(--t));background:#e9f0ff}
+ .technology-feature-icon svg{width:calc(44 * var(--t));height:calc(48 * var(--t))}
+ .technology-features li>div{padding-top:0}
+ .technology-features h3{font-size:clamp(14px,2.777778vw,20px);line-height:1.3}
+ .technology-features p{margin-top:calc(7 * var(--t));font-size:clamp(14px,3.055556vw,22px);line-height:1.363636}
+ .technology-cta{gap:calc(22 * var(--t));min-height:44px;margin-top:calc(30 * var(--t));font-size:clamp(11px,2.222222vw,16px);line-height:1.5;letter-spacing:calc(3 * var(--t))}
+ .technology-cta span{padding:calc(9 * var(--t)) 0}
+ .technology-cta svg{width:calc(26 * var(--t));height:calc(26 * var(--t))}
 }
 
 .operation-section{--o:calc(100vw / 1672);position:relative;isolation:isolate;overflow:hidden;min-height:calc(941 * var(--o));background:#02070b}
