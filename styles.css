@@ -473,6 +473,7 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
 .footer-bottom{grid-template-columns:minmax(0,1fr) calc(382 * var(--f)) max(158px,calc(200 * var(--f)))}
 .dialog-close{display:flex;align-items:center;justify-content:center;width:44px;height:44px;right:8px;top:8px;padding:0;line-height:1}
 .dialog-confirm{min-height:48px;padding:12px 26px;font-weight:600}
+@media(min-width:1051px){.customer-button{width:auto;min-width:calc(211 * var(--u));height:auto;min-height:max(54px,calc(59 * var(--u)));flex:none;white-space:nowrap}}
 @media(max-width:1250px){.footer-bottom{grid-template-columns:minmax(0,1fr) auto}}
 @media(max-width:600px){.footer-bottom{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:1050px){
@@ -487,7 +488,7 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .menu-toggle{height:46px;gap:5px}
  .menu-toggle span{width:22px;height:2px;flex:none}
  .hero-actions{gap:12px;margin-top:22px}
- .hero-actions .cta{height:auto;min-height:56px;padding:15px 16px;gap:12px;border-radius:12px;font-size:15px;white-space:normal;text-align:center}
+ .hero-actions .cta{height:auto;min-height:60px;padding:15px 16px;gap:12px;border-radius:12px;font-size:15px;white-space:normal;text-align:center}
  .hero-actions .cta-primary svg{position:static;width:22px;height:22px}
  .hero-actions .cta-secondary{justify-content:center}
  .hero-actions .whatsapp-icon{width:26px;height:26px}
@@ -511,6 +512,10 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .contact-submit-whatsapp{width:26px;height:26px}
  .contact-submit-arrow{width:22px}
  .footer-socials{gap:12px}
+}
+@media(max-width:380px){
+ .site-header{gap:8px;margin-inline:14px}
+ .brand{--header-logo-width:min(calc(214 * var(--m)),max(76px,calc(720 * var(--m) - 226px)));width:var(--header-logo-width);height:calc(var(--header-logo-width) * 62 / 214);background-size:calc(var(--header-logo-width) * 720 / 214) calc(var(--header-logo-width) * 1280 / 214);background-position:calc(var(--header-logo-width) * -39 / 214) calc(var(--header-logo-width) * -35 / 214)}
 }
 @media(max-width:360px){
  .site-header{gap:6px;margin-inline:14px}
