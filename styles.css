@@ -481,8 +481,8 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .technology-features li{gap:16px}
 }
 @media(max-width:767px){
- .site-header{gap:12px}
- .customer-button{min-height:46px;padding:9px 12px;gap:8px;border-radius:10px;font-size:14px}
+ .site-header{gap:10px}
+ .customer-button{width:auto;min-width:max-content;flex:0 0 auto;min-height:46px;padding:9px 12px;gap:8px;border-radius:10px;font-size:14px}
  .customer-button svg{width:20px;height:auto}
  .menu-toggle{height:46px;gap:5px}
  .menu-toggle span{width:22px;height:2px;flex:none}
@@ -513,7 +513,7 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .footer-socials{gap:12px}
 }
 @media(max-width:360px){
- .site-header{gap:7px}
+ .site-header{gap:6px;margin-inline:14px}
  .customer-button{padding:8px;gap:6px}
  .hero-actions .cta{font-size:14px;gap:10px;padding-inline:12px}
  .technology-features li{padding:14px 12px;gap:12px}
