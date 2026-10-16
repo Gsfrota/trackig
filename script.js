@@ -1,3 +1,4 @@
+import { initTechnologyTracking } from './assets/technology-tracking.js';
 import { validateContactFields, buildContactWhatsAppUrl } from './assets/contact-form.js';
 import { initHeroMobileCarousel } from './assets/hero-mobile-carousel.js';
 
@@ -145,3 +146,5 @@ contactForm.addEventListener('submit', (event) => {
 // unavailable, the disabled submit and noscript link prevent a data-bearing GET.
 contactForm.querySelector('button[type="submit"]').disabled = false;
 initHeroMobileCarousel();
+
+initTechnologyTracking();
