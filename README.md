@@ -1,6 +1,6 @@
-# TrackIG — HERO e Tecnologia
+# TrackIG — HERO, Tecnologia e Operação
 
-Cabeçalho, HERO e seção Tecnologia estáticos em HTML, CSS e JavaScript, sem dependências de execução ou requisições externas no navegador.
+Cabeçalho, HERO e seções Tecnologia e Operação estáticos em HTML, CSS e JavaScript, sem dependências de execução ou requisições externas no navegador.
 
 ## Executar
 
@@ -25,3 +25,5 @@ O layout usa a composição de 1672 × 941 como base e muda para disposição ve
 A geração dos contornos do título foi feita fora do runtime do site; o SVG final não exige bibliotecas nem fontes externas. Os bitmaps fornecidos foram preservados. O endereço da área do cliente ainda precisa ser fornecido após seu desenvolvimento. Revisão independente e QA ficam a cargo do coordenador.
 
 A seção Tecnologia usa a referência de 2103 × 748 como base, logo abaixo da HERO. Seu título visual, `assets/technology-headline.svg`, também usa contornos vetoriais e mantém o texto acessível em um `h2`, com fallback local caso a imagem falhe. `assets/technology-background.png` é o fundo preparado sem textos; uma camada da referência original preserva o cenário à direita, recortada a partir de 42% da imagem e sem abranger os textos originais. A composição mantém a proporção da fonte e se adapta a tablets e telas de 320 px, com CTA de pelo menos 52 px de altura e retorno de foco ao fechar o diálogo.
+
+A seção Operação fica imediatamente abaixo de Tecnologia e usa o fundo original limpo de 1672 × 941, com escala proporcional, brilho ajustado e um painel central escuro para leitura. O título, os valores e os ícones dos cards usam SVGs de contornos da referência, sem raster embutido; os títulos e indicadores permanecem como texto HTML acessível, com fallback local. A pequena marca na parede usa um sprite decorativo recortado da referência, com bordas suavizadas. Os três cards são elementos HTML/CSS com fundo opaco e passam a uma coluna em telas de até 1150 px. Os valores +1.482, 98,7% e a afirmação de operação nacional reproduzem o material fornecido: são estáticos, sem contador, consulta de telemetria, CTA ou novas integrações.
