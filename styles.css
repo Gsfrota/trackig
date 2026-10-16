@@ -182,13 +182,13 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
 .contact-fields{display:flex;flex-direction:column;gap:max(12px,calc(16 * var(--c)))}
 .contact-control{position:relative}
 .contact-input{display:block;width:100%;height:calc(74 * var(--c));min-height:56px;padding:0 calc(74 * var(--c));border:1.5px solid #cdd0d4;border-radius:2px;background:#fff;color:#15191e;font:inherit;font-size:max(16px,calc(20 * var(--c)));box-shadow:inset 0 0 3px #c7d0db15}
-.contact-input::placeholder{color:#858c98;opacity:1}
+.contact-input::placeholder{color:#677079;opacity:1}
 .contact-input:focus-visible{outline:3px solid #005cff;outline-offset:3px}
 .contact-input[aria-invalid="true"]{border-color:#b42318}
 .contact-field-icon{position:absolute;top:50%;left:calc(27 * var(--c));width:calc(24 * var(--c));min-width:20px;height:calc(28 * var(--c));min-height:23px;transform:translateY(-50%);stroke:#090d11;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;pointer-events:none}
 .contact-phone-icon{width:calc(27 * var(--c));height:calc(27 * var(--c))}
 .contact-select{appearance:none;padding-right:calc(64 * var(--c));cursor:pointer}
-.contact-select:invalid{color:#858c98}
+.contact-select:invalid{color:#677079}
 .contact-select option{color:#15191e}
 .contact-select-chevron{position:absolute;right:calc(26 * var(--c));top:50%;width:calc(20 * var(--c));min-width:16px;height:calc(14 * var(--c));min-height:12px;transform:translateY(-50%);stroke:#0c0f12;stroke-width:1.6;pointer-events:none}
 .contact-error{margin:9px 0 0;color:#a61c16;font-size:14px;line-height:20px}
