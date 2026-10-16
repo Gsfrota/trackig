@@ -198,6 +198,7 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .technology-cta svg{width:calc(26 * var(--t));height:calc(26 * var(--t))}
 }
 
+.operation-mobile-title,.operation-description-mobile,.operation-mobile-map{display:none}
 .operation-section{--o:calc(100vw / 1672);position:relative;isolation:isolate;overflow:hidden;min-height:calc(941 * var(--o));background:#02070b}
 .operation-scene{position:absolute;inset:0;z-index:-3;background:url('assets/operation-background.png') center / cover no-repeat;filter:brightness(.75);pointer-events:none}
 .operation-section::before{content:"";position:absolute;left:calc(466 * var(--o));top:calc(129 * var(--o));width:calc(740 * var(--o));height:calc(341 * var(--o));z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(0,2,6,.94) 0%,rgba(0,2,6,.84) 75%,transparent 100%)}
@@ -246,6 +247,53 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .operation-card-national .operation-metric-fallback .operation-metric-text{padding-top:55px}
  .operation-card-copy{top:151px;font-size:20px;line-height:32px}
  .operation-card-national .operation-card-copy{top:157px;font-size:16px;line-height:28px}
+}
+@media(max-width:767px){
+ .operation-section{container-type:inline-size;--om:calc(100cqw / 720);background:radial-gradient(ellipse at 90% 15%,#132234 0,transparent 47%),#020a12}
+ .operation-section::before{display:none}
+ .operation-scene{inset:0 0 auto;height:calc(800 * var(--om));background:linear-gradient(transparent 85%,#020a12),url('assets/operation-mobile-clean-background.png') center top / 100% auto no-repeat;filter:none}
+ .operation-content{padding:calc(56 * var(--om)) calc(60 * var(--om)) 0;text-align:left}
+ .operation-label{padding:0;font-size:max(14px,calc(17 * var(--om)));line-height:1.4;letter-spacing:calc(7 * var(--om));color:#a5adbb}
+ .operation-heading{width:100%;height:auto;aspect-ratio:auto;margin:calc(30 * var(--om)) 0 0;font-size:clamp(25px,calc(52 * var(--om)),52px);line-height:1.02;letter-spacing:-.035em}
+ .operation-headline{display:none}
+ .operation-mobile-title{display:block;width:calc(100% / 1.45);transform:scaleX(1.45);transform-origin:left center}
+ .operation-mobile-title>span,.operation-mobile-title>em{display:block;white-space:nowrap;font-style:normal}
+ .operation-mobile-title>span:nth-child(2){color:#b9c3d1}
+ .operation-mobile-title>em{color:#0054fb}
+ .operation-fallback .operation-title-text{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ .operation-description-desktop{display:none}
+ .operation-description-mobile{display:block;max-width:calc(315 * var(--om));margin:calc(30 * var(--om)) 0 0;font-size:max(14px,calc(21 * var(--om)));line-height:1.34;color:#c5cad2}
+ .operation-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(12 * var(--om));width:100%;margin:max(32px,calc(135 * var(--om))) 0 0}
+ .operation-card{height:auto;min-height:calc(200 * var(--om));padding:calc(26 * var(--om)) 7px calc(19 * var(--om));border-radius:calc(15 * var(--om));background:linear-gradient(130deg,#040e18,#020910);text-align:center}
+ .operation-card::before,.operation-card::after{display:none}
+ .operation-metric,.operation-card-national .operation-metric{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:calc(92 * var(--om));transform:none;font-family:Roboto,Arial,sans-serif;font-size:max(22px,calc(38 * var(--om)));font-weight:700;line-height:1.05}
+ .operation-metric img{position:absolute;left:50%;top:0;transform:translateX(-50%);width:calc(180 * var(--om));max-width:none;height:auto;clip-path:inset(0 0 53% 0)}
+ .operation-metric-text,.operation-metric-fallback .operation-metric-text,.operation-card-national .operation-metric-fallback .operation-metric-text{position:static;display:block;width:auto;height:auto;padding:calc(57 * var(--om)) 0 0;margin:0;overflow:visible;clip:auto;white-space:normal}
+ .operation-card-national .operation-metric{font-size:max(16px,calc(25 * var(--om)));line-height:1.05}
+ .operation-card-copy,.operation-card-national .operation-card-copy{position:static;max-width:min(100%,calc(150 * var(--om)));margin:calc(13 * var(--om)) auto 0;font-size:max(14px,calc(18 * var(--om)));line-height:1.2;overflow-wrap:normal}
+ .operation-mobile-map{position:relative;display:block;isolation:isolate;width:100%;aspect-ratio:720/480;margin-top:calc(10 * var(--om))}
+ .operation-mobile-map::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(#020a12,transparent 5%),url('assets/operation-mobile-clean-background.png') center bottom / 100% auto no-repeat}
+ .operation-coverage{position:absolute;left:calc(60 * var(--om));top:calc(290 * var(--om));display:flex;align-items:center;gap:calc(16 * var(--om));width:max(180px,calc(280 * var(--om)));min-height:max(66px,calc(110 * var(--om)));padding:12px calc(28 * var(--om));border:1px solid #1b3c5d;border-left:max(5px,calc(10 * var(--om))) solid #005cff;border-radius:calc(14 * var(--om));background:#030c16;box-shadow:0 4px 20px #0005}
+ .operation-coverage svg{flex:0 0 auto;width:max(31px,calc(48 * var(--om)));height:auto;color:#a7b1bf}
+ .operation-coverage p{margin:0;font-size:max(14px,calc(20 * var(--om)));line-height:1.25;color:#f2f3f5}
+}
+@media(max-width:479px){
+ .operation-description-mobile{max-width:56%;text-shadow:0 1px 5px #000}
+ .operation-cards{margin-top:32px;gap:8px}
+ .operation-card{padding:16px 5px;min-height:156px}
+ .operation-metric,.operation-card-national .operation-metric{min-height:78px}
+ .operation-metric{font-size:20px}
+ .operation-metric img{width:130px}
+ .operation-metric-text,.operation-metric-fallback .operation-metric-text,.operation-card-national .operation-metric-fallback .operation-metric-text{padding-top:42px}
+ .operation-card-copy,.operation-card-national .operation-card-copy{max-width:100%;margin-top:10px;font-size:12px}
+ .operation-mobile-map{margin-top:12px;background:#020a12}
+}
+@media(max-width:360px){
+ .operation-cards{grid-template-columns:minmax(0,1fr);gap:12px}
+ .operation-card{min-height:150px;padding:18px}
+ .operation-metric{font-size:28px}
+ .operation-card-national .operation-metric{font-size:22px}
+ .operation-card-copy,.operation-card-national .operation-card-copy{font-size:14px;overflow-wrap:normal}
 }
 
 .contact-section{--c:calc(100vw / 1672);position:relative;isolation:isolate;min-height:calc(941 * var(--c));overflow:hidden;color:#050607;color-scheme:light;background:#f7f7f6}
