@@ -1,6 +1,6 @@
 # TrackIG — HERO, Tecnologia, Operação e Contato
 
-Cabeçalho, HERO e seções Tecnologia, Operação e Contato estáticos em HTML, CSS e JavaScript, sem dependências de execução ou requisições externas no carregamento da página.
+Cabeçalho, HERO, seções Tecnologia, Operação e Contato e rodapé estáticos em HTML, CSS e JavaScript, sem dependências de execução ou requisições externas no carregamento da página.
 
 ## Executar
 
@@ -43,3 +43,5 @@ A seção Operação fica imediatamente abaixo de Tecnologia e usa o fundo origi
 A seção Contato segue a referência de 1672 × 941 com fundo claro em CSS, título vetorial acessível e campos HTML reais. O nome aceita acentos e nomes curtos e rejeita vazio/apenas espaços. O WhatsApp aceita número brasileiro com DDD e 10 ou 11 dígitos, pontuação comum e código 55 opcional. O interesse deve ser uma das quatro categorias exibidas. Erros em português identificam os campos e direcionam o foco ao primeiro inválido.
 
 Ao iniciar atendimento com dados válidos, o navegador abre uma conversa no WhatsApp comercial com nome, telefone normalizado e interesse codificados na URL, para o visitante revisar e enviar. A página não envia a mensagem automaticamente, não armazena os dados, não os registra em console e não usa backend, analytics ou variáveis de ambiente. O aviso de privacidade da referência é preservado. O envio nativo fica desativado até o JavaScript conectar a validação; sem JavaScript, o botão permanece inativo e é mostrado um link direto ao WhatsApp, sem incorporar os campos à URL da hospedagem. O método POST é apenas uma proteção contra GET nativo, não um endpoint de coleta. As regras puras estão em `assets/contact-form.js` e não exigem bibliotecas.
+
+O rodapé segue a referência de 2170 × 725, com marca vetorial acessível, slogans, colunas e contatos reais em HTML. A navegação leva às quatro seções; Soluções e Sobre levam à seção Operação. O telefone oficial é +55 85 99131-8582 e o email é comercial@trackig.com.br. Instagram, LinkedIn, YouTube, Privacidade e Termos de uso abrem avisos de indisponibilidade no diálogo existente, conforme solicitado; não há perfis ou documentos inventados. Os controles sociais têm alvo mínimo de 44 px, nomes acessíveis e retorno de foco ao fechar o aviso.

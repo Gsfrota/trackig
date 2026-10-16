@@ -20,6 +20,11 @@ const messages = {
   customer: ['Área do cliente', 'A área do cliente está em desenvolvimento. Em breve, você poderá acessá-la aqui.'],
   technology: ['Conheça a tecnologia TrackIG', 'Rastreamento em tempo real para acompanhar o veículo. Histórico para consultar os registros de trajetos. Alertas para manter você informado.'],
   how: ['Como funciona', 'Estamos preparando esta apresentação. Em breve, você poderá conhecer o funcionamento aqui.'],
+  privacy: ['Privacidade', 'A política de privacidade da TrackIG ainda não está disponível.'],
+  terms: ['Termos de uso', 'Os termos de uso da TrackIG ainda não estão disponíveis.'],
+  instagram: ['Instagram', 'A TrackIG ainda não possui um perfil oficial no Instagram.'],
+  linkedin: ['LinkedIn', 'A TrackIG ainda não possui um perfil oficial no LinkedIn.'],
+  youtube: ['YouTube', 'A TrackIG ainda não possui um canal oficial no YouTube.'],
 };
 
 function closeMenu() {
