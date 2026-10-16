@@ -16,7 +16,7 @@ const messages = {
   protect: ['Proteja seu veículo', 'O canal de contratação da TrackIG será disponibilizado em breve.'],
   contact: ['Fale com a TrackIG', 'O contato oficial da TrackIG será disponibilizado em breve.'],
   customer: ['Área do cliente', 'A área do cliente está em desenvolvimento. Em breve, você poderá acessá-la aqui.'],
-  solutions: ['Soluções TrackIG', 'Estamos preparando os detalhes das soluções. Em breve, você poderá conhecê-los aqui.'],
+  technology: ['Conheça a tecnologia TrackIG', 'Rastreamento em tempo real para acompanhar o veículo. Histórico para consultar os registros de trajetos. Alertas para manter você informado.'],
   how: ['Como funciona', 'Estamos preparando esta apresentação. Em breve, você poderá conhecer o funcionamento aqui.'],
 };
 
