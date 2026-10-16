@@ -10,6 +10,7 @@ const dialogTitle = document.querySelector('#dialog-title');
 const dialogDescription = document.querySelector('#dialog-description');
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-nav');
+let dialogTrigger = null;
 
 const messages = {
   protect: ['Proteja seu veículo', 'O canal de contratação da TrackIG será disponibilizado em breve.'],
@@ -25,7 +26,8 @@ function closeMenu() {
   menuToggle.setAttribute('aria-label', 'Abrir menu');
 }
 
-function showInformation(key) {
+function showInformation(key, trigger) {
+  dialogTrigger = trigger;
   const [title, description] = messages[key];
   dialogTitle.textContent = title;
   dialogDescription.textContent = description;
@@ -36,6 +38,7 @@ document.querySelectorAll('[data-action], [data-info]').forEach((button) => {
   const configuredUrl = TRACKIG_CONFIG[`${button.dataset.action}Url`];
   if (button.tagName === 'A' && configuredUrl?.startsWith('https://')) button.href = configuredUrl;
   button.addEventListener('click', (event) => {
+    const trigger = event.currentTarget;
     closeMenu();
     const action = button.dataset.action;
     const destination = action ? TRACKIG_CONFIG[`${action}Url`] : '';
@@ -50,7 +53,7 @@ document.querySelectorAll('[data-action], [data-info]').forEach((button) => {
       } catch { /* An incomplete destination uses the honest fallback below. */ }
     }
     event.preventDefault();
-    showInformation(action || button.dataset.info);
+    showInformation(action || button.dataset.info, trigger);
   });
 });
 
@@ -69,6 +72,15 @@ document.addEventListener('keydown', (event) => {
 });
 document.querySelectorAll('.dialog-close, .dialog-confirm').forEach((button) => {
   button.addEventListener('click', () => dialog.close());
+});
+dialog.addEventListener('close', () => {
+  const trigger = dialogTrigger;
+  dialogTrigger = null;
+  if (trigger?.isConnected && trigger.getClientRects().length) {
+    trigger.focus();
+  } else if (menuToggle.getClientRects().length) {
+    menuToggle.focus();
+  }
 });
 dialog.addEventListener('click', (event) => {
   if (event.target !== dialog) return;
