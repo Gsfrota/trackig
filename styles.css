@@ -434,3 +434,89 @@ dialog p{font-size:17px;line-height:1.55;color:#bbc5cf;margin:0 0 26px}
  .footer-tagline{grid-column:1;padding-left:15px}
  .footer-socials{justify-content:flex-start;gap:18px}
 }
+
+/* Comfortable controls and stable icon proportions across viewport sizes. */
+.customer-button,.cta,.technology-cta,.contact-submit{line-height:1.35;font-weight:600}
+.customer-button,.cta{padding:12px 20px}
+.customer-button{gap:12px}
+.customer-button svg,.cta svg,.technology-feature-icon svg,.technology-motion-toggle svg,.technology-cta svg,.contact-submit svg,.footer-socials svg{display:block;flex:0 0 auto}
+.customer-button svg{width:24px;height:auto;aspect-ratio:28/30}
+.cta-primary svg{width:24px;height:24px}
+.whatsapp-icon{width:28px;height:28px}
+.cta-primary{box-shadow:0 6px 20px #005cff26}
+.cta-secondary,.customer-button{border-color:#a3b0be99}
+.technology-feature-icon svg{width:30px;height:34px}
+.technology-motion-toggle{width:46px;height:46px;padding:0}
+.technology-motion-toggle svg{width:20px;height:20px}
+.technology-cta{gap:14px;min-height:48px;padding:10px 18px;border:1px solid #0052d82b;border-radius:12px;background:#e9f0ff;font-size:13px;letter-spacing:1.5px}
+.technology-cta span{padding:0;border:0}
+.technology-cta:hover{background:#dce8ff}
+.technology-cta svg{width:22px;height:22px}
+.contact-input{border-radius:12px;line-height:1.4;box-shadow:0 3px 12px #163a7405}
+.contact-field-icon{width:24px;height:auto;aspect-ratio:28/30;min-height:0}
+.contact-phone-icon{width:26px;aspect-ratio:1}
+.contact-select-chevron{width:18px;height:auto;aspect-ratio:20/14;min-height:0}
+.contact-submit{height:auto;min-height:64px;gap:16px;padding:17px 24px;border-radius:12px;letter-spacing:1px;white-space:normal;box-shadow:0 6px 18px #10111216}
+.contact-submit span{min-width:0}
+.contact-submit-whatsapp{width:28px;height:28px;min-width:0;min-height:0}
+.contact-submit-arrow{position:static;width:24px;height:auto;aspect-ratio:28/24;min-width:0;min-height:0}
+.contact-privacy{line-height:1.5}
+.contact-privacy svg{width:19px;height:auto;aspect-ratio:24/30;min-height:0}
+.footer-brand-slogan,.footer-column h2,.footer-description,.footer-links a,.footer-links button,.footer-contact-list a,.footer-location,.footer-copyright,.footer-tagline{line-height:1.5}
+.footer-links{gap:4px}
+.footer-links a,.footer-links button{display:inline-flex;align-items:center;min-height:44px;padding:6px 0}
+.footer-contact-list a,.footer-location{min-height:44px;gap:14px}
+.footer-contact-list svg{width:26px;height:auto;min-height:0}
+.footer-socials{justify-content:flex-start;gap:10px}
+.footer-socials button{width:46px;height:46px;border:1px solid #343c46;border-radius:13px;background:#ffffff04}
+.footer-socials svg{width:24px;height:auto;min-width:0;min-height:0}
+.footer-bottom{grid-template-columns:minmax(0,1fr) calc(382 * var(--f)) max(158px,calc(200 * var(--f)))}
+.dialog-close{display:flex;align-items:center;justify-content:center;width:44px;height:44px;right:8px;top:8px;padding:0;line-height:1}
+.dialog-confirm{min-height:48px;padding:12px 26px;font-weight:600}
+@media(max-width:1250px){.footer-bottom{grid-template-columns:minmax(0,1fr) auto}}
+@media(max-width:600px){.footer-bottom{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:1050px){
+ .customer-button{padding:0}
+ .menu-toggle{width:44px;min-width:44px;height:44px;border:1px solid #a3b0be66;border-radius:10px;background:#05090c66}
+ .technology-features li{gap:16px}
+}
+@media(max-width:767px){
+ .site-header{gap:12px}
+ .customer-button{min-height:46px;padding:9px 12px;gap:8px;border-radius:10px;font-size:14px}
+ .customer-button svg{width:20px;height:auto}
+ .menu-toggle{height:46px;gap:5px}
+ .menu-toggle span{width:22px;height:2px;flex:none}
+ .hero-actions{gap:12px;margin-top:22px}
+ .hero-actions .cta{height:auto;min-height:56px;padding:15px 16px;gap:12px;border-radius:12px;font-size:15px;white-space:normal;text-align:center}
+ .hero-actions .cta-primary svg{position:static;width:22px;height:22px}
+ .hero-actions .cta-secondary{justify-content:center}
+ .hero-actions .whatsapp-icon{width:26px;height:26px}
+ .hero-mobile-controls{gap:5px;padding:4px;border-color:#a8bfd066;box-shadow:0 4px 18px #0004}
+ .hero-mobile-controls button{width:44px;height:44px;flex:none;background:#ffffff08}
+ .technology-label{font-size:12px}
+ .technology-features{gap:12px;margin-top:16px}
+ .technology-features li{min-height:88px;padding:16px;gap:16px;border-radius:16px;background:#fff9}
+ .technology-feature-icon{width:52px;height:52px;border-radius:16px}
+ .technology-feature-icon svg{width:28px;height:32px}
+ .technology-features h3{font-size:14px;line-height:1.4}
+ .technology-features p{margin-top:5px;font-size:14px;line-height:1.45}
+ .technology-cta{width:100%;margin-top:20px;font-size:12px;letter-spacing:1px}
+ .operation-card{border-radius:14px}
+ .operation-card-copy,.operation-card-national .operation-card-copy{line-height:1.4}
+ .operation-coverage{gap:12px;padding:14px 18px;border-radius:12px}
+ .operation-coverage svg{width:34px;height:34px}
+ .contact-input{min-height:62px;padding-left:58px}
+ .contact-field-icon{left:20px}
+ .contact-submit{padding:17px 16px;gap:12px;font-size:14px;letter-spacing:.5px}
+ .contact-submit-whatsapp{width:26px;height:26px}
+ .contact-submit-arrow{width:22px}
+ .footer-socials{gap:12px}
+}
+@media(max-width:360px){
+ .site-header{gap:7px}
+ .customer-button{padding:8px;gap:6px}
+ .hero-actions .cta{font-size:14px;gap:10px;padding-inline:12px}
+ .technology-features li{padding:14px 12px;gap:12px}
+ .technology-feature-icon{width:48px;height:48px;border-radius:14px}
+ .contact-submit{gap:10px;padding-inline:12px;font-size:13px}
+}
