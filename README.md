@@ -12,6 +12,18 @@ npm run dev
 
 Abra http://127.0.0.1:4173. Para verificar a sintaxe JavaScript: `npm run check`.
 
+## Build e Vercel
+
+Execute `npm run build` para gerar `dist/`. O build copia, sem modificar os bytes, apenas `index.html`, `styles.css`, `script.js` e `assets/`, incluindo as licenças das fontes. Não há dependências para instalar. Documentação, servidor local e configurações do repositório ficam fora da saída. A pasta gerada é ignorada pelo Git.
+
+Ao importar o repositório na Vercel, use a raiz do projeto e as configurações declaradas em `vercel.json`:
+
+- Framework Preset: **Other**.
+- Build Command: `npm run build`.
+- Output Directory: `dist`.
+
+Não são necessárias variáveis de ambiente. O site é estático; os contatos e os valores da seção Operação são os conteúdos já fornecidos. A área do cliente continua com o aviso de desenvolvimento.
+
 ## Destinos comerciais
 
 Os dois CTAs da HERO e Contato abrem o WhatsApp oficial fornecido, +55 85 99131-8582, em nova aba com `noopener noreferrer`. Os destinos ficam em `TRACKIG_CONFIG`, no início de `script.js`; as âncoras HTML mantêm o endereço para funcionar também sem JavaScript. A área do cliente abre um aviso de que está em desenvolvimento. Não há formulário nem coleta de dados. Soluções leva à seção Tecnologia. Seu CTA abre uma explicação sobre rastreamento em tempo real, histórico e alertas, sem simular uma integração operacional. Como funciona mantém o aviso de apresentação em preparação.
