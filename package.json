@@ -1,0 +1,11 @@
+{
+  "name": "trackig-hero",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "check": "node --check server.mjs && node --check script.js"
+  },
+  "engines": { "node": ">=20" }
+}
