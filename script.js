@@ -1,3 +1,5 @@
+import { validateContactFields, buildContactWhatsAppUrl } from './assets/contact-form.js';
+
 // Keep the supplied official commercial destinations together.
 const TRACKIG_CONFIG = Object.freeze({
   protectUrl: 'https://wa.me/5585991318582',
@@ -87,3 +89,52 @@ dialog.addEventListener('click', (event) => {
   const bounds = dialog.getBoundingClientRect();
   if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
 });
+
+const contactForm = document.querySelector('#contact-form');
+const contactFields = {
+  name: document.querySelector('#contact-name'),
+  phone: document.querySelector('#contact-phone'),
+  interest: document.querySelector('#contact-interest'),
+};
+const contactStatus = document.querySelector('#contact-status');
+const readContactValues = () => Object.fromEntries(Object.entries(contactFields).map(([key, field]) => [key, field.value]));
+
+function renderContactError(key, message = '') {
+  const field = contactFields[key];
+  const error = document.querySelector(`#${field.id}-error`);
+  error.textContent = message;
+  error.hidden = !message;
+  if (message) field.setAttribute('aria-invalid', 'true');
+  else field.removeAttribute('aria-invalid');
+}
+
+for (const [key, field] of Object.entries(contactFields)) {
+  const recover = () => {
+    contactStatus.textContent = '';
+    contactStatus.hidden = true;
+    if (field.getAttribute('aria-invalid') === 'true') {
+      renderContactError(key, validateContactFields(readContactValues()).errors[key]);
+    }
+  };
+  field.addEventListener('input', recover);
+  field.addEventListener('change', recover);
+}
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const values = readContactValues();
+  const result = validateContactFields(values);
+  for (const key of Object.keys(contactFields)) renderContactError(key, result.errors[key]);
+  if (!result.valid) {
+    contactStatus.hidden = true;
+    contactFields[Object.keys(result.errors)[0]].focus();
+    return;
+  }
+  const url = buildContactWhatsAppUrl(values, TRACKIG_CONFIG.contactUrl);
+  contactStatus.textContent = 'Revise e envie a mensagem no WhatsApp. O envio não acontece automaticamente.';
+  contactStatus.hidden = false;
+  window.open(url, '_blank', 'noopener,noreferrer');
+});
+// Keep native submission inactive until validation is connected. With JavaScript
+// unavailable, the disabled submit and noscript link prevent a data-bearing GET.
+contactForm.querySelector('button[type="submit"]').disabled = false;

@@ -1,6 +1,6 @@
-# TrackIG — HERO, Tecnologia e Operação
+# TrackIG — HERO, Tecnologia, Operação e Contato
 
-Cabeçalho, HERO e seções Tecnologia e Operação estáticos em HTML, CSS e JavaScript, sem dependências de execução ou requisições externas no navegador.
+Cabeçalho, HERO e seções Tecnologia, Operação e Contato estáticos em HTML, CSS e JavaScript, sem dependências de execução ou requisições externas no carregamento da página.
 
 ## Executar
 
@@ -26,7 +26,7 @@ Não são necessárias variáveis de ambiente. O site é estático; os contatos 
 
 ## Destinos comerciais
 
-Os dois CTAs da HERO e Contato abrem o WhatsApp oficial fornecido, +55 85 99131-8582, em nova aba com `noopener noreferrer`. Os destinos ficam em `TRACKIG_CONFIG`, no início de `script.js`; as âncoras HTML mantêm o endereço para funcionar também sem JavaScript. A área do cliente abre um aviso de que está em desenvolvimento. Não há formulário nem coleta de dados. Soluções leva à seção Tecnologia. Seu CTA abre uma explicação sobre rastreamento em tempo real, histórico e alertas, sem simular uma integração operacional. Como funciona mantém o aviso de apresentação em preparação.
+Os dois CTAs da HERO abrem o WhatsApp oficial fornecido, +55 85 99131-8582, em nova aba com `noopener noreferrer`. Os destinos ficam em `TRACKIG_CONFIG`, no início de `script.js`; as âncoras HTML mantêm o endereço para funcionar também sem JavaScript. Contato navega para o formulário da quarta seção. A área do cliente abre um aviso de que está em desenvolvimento. Soluções leva à seção Tecnologia. Seu CTA abre uma explicação sobre rastreamento em tempo real, histórico e alertas, sem simular uma integração operacional. Como funciona mantém o aviso de apresentação em preparação.
 
 ## Visual e acessibilidade
 
@@ -39,3 +39,7 @@ A geração dos contornos do título foi feita fora do runtime do site; o SVG fi
 A seção Tecnologia usa a referência de 2103 × 748 como base, logo abaixo da HERO. Seu título visual, `assets/technology-headline.svg`, também usa contornos vetoriais e mantém o texto acessível em um `h2`, com fallback local caso a imagem falhe. `assets/technology-background.png` é o fundo preparado sem textos; uma camada da referência original preserva o cenário à direita, recortada a partir de 42% da imagem e sem abranger os textos originais. A composição mantém a proporção da fonte e se adapta a tablets e telas de 320 px, com CTA de pelo menos 52 px de altura e retorno de foco ao fechar o diálogo.
 
 A seção Operação fica imediatamente abaixo de Tecnologia e usa o fundo original limpo de 1672 × 941, com escala proporcional, brilho ajustado e um painel central escuro para leitura. O título, os valores e os ícones dos cards usam SVGs de contornos da referência, sem raster embutido; os títulos e indicadores permanecem como texto HTML acessível, com fallback local. A pequena marca na parede usa um sprite decorativo recortado da referência, com bordas suavizadas. Os três cards são elementos HTML/CSS com fundo opaco e passam a uma coluna em telas de até 1150 px. Os valores +1.482, 98,7% e a afirmação de operação nacional reproduzem o material fornecido: são estáticos, sem contador, consulta de telemetria, CTA ou novas integrações.
+
+A seção Contato segue a referência de 1672 × 941 com fundo claro em CSS, título vetorial acessível e campos HTML reais. O nome aceita acentos e nomes curtos e rejeita vazio/apenas espaços. O WhatsApp aceita número brasileiro com DDD e 10 ou 11 dígitos, pontuação comum e código 55 opcional. O interesse deve ser uma das quatro categorias exibidas. Erros em português identificam os campos e direcionam o foco ao primeiro inválido.
+
+Ao iniciar atendimento com dados válidos, o navegador abre uma conversa no WhatsApp comercial com nome, telefone normalizado e interesse codificados na URL, para o visitante revisar e enviar. A página não envia a mensagem automaticamente, não armazena os dados, não os registra em console e não usa backend, analytics ou variáveis de ambiente. O aviso de privacidade da referência é preservado. O envio nativo fica desativado até o JavaScript conectar a validação; sem JavaScript, o botão permanece inativo e é mostrado um link direto ao WhatsApp, sem incorporar os campos à URL da hospedagem. O método POST é apenas uma proteção contra GET nativo, não um endpoint de coleta. As regras puras estão em `assets/contact-form.js` e não exigem bibliotecas.

@@ -9,7 +9,7 @@
   <link rel="preload" href="assets/hero-headline.svg" as="image" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <script src="script.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio">Ir para o conteúdo</a>
@@ -23,7 +23,7 @@
         <a class="active" href="#inicio" aria-current="page">Início</a>
         <a href="#tecnologia">Soluções</a>
         <button type="button" data-info="how">Como funciona</button>
-        <a href="https://wa.me/5585991318582" target="_blank" rel="noopener noreferrer" data-action="contact">Contato</a>
+        <a href="#contato">Contato</a>
       </nav>
       <button class="customer-button" type="button" data-action="customer"><svg viewBox="0 0 28 30" fill="none" aria-hidden="true"><circle cx="14" cy="8" r="5"/><path d="M4 27v-3a10 10 0 0 1 20 0v3"/></svg><span>Área do cliente</span></button>
     </header>
@@ -67,6 +67,35 @@
           <p class="operation-card-copy">Monitoramento em tempo real</p>
         </li>
       </ul>
+    </div>
+  </section>
+  <section class="contact-section" id="contato" aria-labelledby="contact-heading" tabindex="-1">
+    <div class="contact-content">
+      <p class="contact-label">TRACKIG</p>
+      <h2 class="contact-heading" id="contact-heading"><span class="contact-title-text sr-only"><span>FALE COM</span> <span>NOSSO TIME</span></span><img class="contact-headline" src="assets/contact-headline.svg" width="672" height="158" alt="" aria-hidden="true" loading="lazy" onerror="this.closest('h2').classList.add('contact-fallback')"></h2>
+      <form class="contact-form" id="contact-form" action="#contato" method="post" novalidate>
+        <div class="contact-fields">
+          <div class="contact-field">
+            <label class="sr-only" for="contact-name">Seu nome</label>
+            <div class="contact-control"><svg class="contact-field-icon" viewBox="0 0 28 30" fill="none" aria-hidden="true"><circle cx="14" cy="8" r="5"/><path d="M5 26v-2a9 9 0 0 1 18 0v2H5ZM7 21h14"/></svg><input class="contact-input" id="contact-name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Seu nome" required aria-describedby="contact-name-error"></div>
+            <p class="contact-error" id="contact-name-error" hidden></p>
+          </div>
+          <div class="contact-field">
+            <label class="sr-only" for="contact-phone">Seu WhatsApp</label>
+            <div class="contact-control"><svg class="contact-field-icon contact-phone-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m5 25-2 6 7-2a13 13 0 1 0-5-4Z"/><path d="M11 9c-1-1-2 0-2 2 0 5 7 12 12 11 2-1 3-3 2-4l-4-2-2 2c-3-1-5-3-6-6l2-1-2-2Z"/></svg><input class="contact-input" id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="Seu WhatsApp" required aria-describedby="contact-phone-error"></div>
+            <p class="contact-error" id="contact-phone-error" hidden></p>
+          </div>
+          <div class="contact-field">
+            <label class="sr-only" for="contact-interest">Tipo de interesse</label>
+            <div class="contact-control"><svg class="contact-field-icon" viewBox="0 0 28 30" fill="none" aria-hidden="true"><path d="M5 3h13l5 5v19H5V3ZM17 3v6h6M10 11v4h4v5h4M10 15v7"/><circle cx="10" cy="10" r="1"/><circle cx="18" cy="21" r="1"/></svg><select class="contact-input contact-select" id="contact-interest" name="interest" required aria-describedby="contact-interest-error"><option value="" selected disabled>Tipo de interesse</option><option>Rastreamento veicular</option><option>Gestão de frotas</option><option>Financiamento e securitizadoras</option><option>Outros</option></select><svg class="contact-select-chevron" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="m3 4 7 7 7-7"/></svg></div>
+            <p class="contact-error" id="contact-interest-error" hidden></p>
+          </div>
+        </div>
+        <button class="contact-submit" type="submit" disabled><svg class="contact-submit-whatsapp" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m5 25-2 6 7-2a13 13 0 1 0-5-4Z"/><path d="M11 9c-1-1-2 0-2 2 0 5 7 12 12 11 2-1 3-3 2-4l-4-2-2 2c-3-1-5-3-6-6l2-1-2-2Z"/></svg><span>INICIAR ATENDIMENTO</span><svg class="contact-submit-arrow" viewBox="0 0 28 24" fill="none" aria-hidden="true"><path d="M2 12h23M16 3l9 9-9 9"/></svg></button>
+        <p class="contact-privacy"><svg viewBox="0 0 24 30" fill="none" aria-hidden="true"><path d="M6 12V8a6 6 0 0 1 12 0v4M3 12h18v16H3V12Z"/><circle cx="12" cy="19" r="1.5"/><path d="M12 20v3"/></svg><span>Seus dados são utilizados apenas para contato comercial.</span></p>
+        <p class="contact-status" id="contact-status" role="status" hidden></p>
+        <noscript><p class="contact-no-script">Ative o JavaScript para preparar seus dados ou <a href="https://wa.me/5585991318582" target="_blank" rel="noopener noreferrer">fale diretamente com a TrackIG no WhatsApp</a>.</p></noscript>
+      </form>
     </div>
   </section>
   <dialog id="info-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
