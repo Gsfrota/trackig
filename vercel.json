@@ -2,18 +2,12 @@
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "destination": "/index.md" },
-    { "source": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "destination": "/index.md" },
-    { "source": "/como-funciona.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "destination": "/como-funciona.md" }
-  ],
-  "headers": [
-    { "source": "/", "headers": [{ "key": "Vary", "value": "Accept" }, { "key": "Cache-Control", "value": "private, no-store" }] },
-    { "source": "/index.html", "headers": [{ "key": "Vary", "value": "Accept" }, { "key": "Cache-Control", "value": "private, no-store" }] },
-    { "source": "/como-funciona.html", "headers": [{ "key": "Vary", "value": "Accept" }, { "key": "Cache-Control", "value": "private, no-store" }] },
-    { "source": "/", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] },
-    { "source": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] },
-    { "source": "/como-funciona.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] },
-    { "source": "/:path*.md", "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] }
+  "routes": [
+    { "src": "^/$", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "dest": "/index.md", "headers": { "Content-Type": "text/markdown; charset=utf-8", "Vary": "Accept", "Cache-Control": "private, no-store" } },
+    { "src": "^/index\\.html$", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "dest": "/index.md", "headers": { "Content-Type": "text/markdown; charset=utf-8", "Vary": "Accept", "Cache-Control": "private, no-store" } },
+    { "src": "^/como-funciona\\.html$", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "dest": "/como-funciona.md", "headers": { "Content-Type": "text/markdown; charset=utf-8", "Vary": "Accept", "Cache-Control": "private, no-store" } },
+    { "src": "^/(?:index\\.html|como-funciona\\.html)?$", "headers": { "Vary": "Accept", "Cache-Control": "private, no-store" }, "continue": true },
+    { "src": "^/(?:index|como-funciona)\\.md$", "headers": { "Content-Type": "text/markdown; charset=utf-8" }, "continue": true },
+    { "handle": "filesystem" }
   ]
 }

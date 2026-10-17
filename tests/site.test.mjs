@@ -9,6 +9,20 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://www.trackig.com.br';
 const pages = ['index.html', 'como-funciona.html'];
 
+// Resolve only the configured pre-filesystem routes; never infer rewrite behavior
+// from a regex alone. The platform preview remains the integration authority.
+function resolvePreFilesystem(configuration, pathname, accept = '') {
+  const headers = {};
+  for (const route of configuration.routes) {
+    if (route.handle === 'filesystem') return { destination: pathname, headers };
+    if (!new RegExp(route.src).test(pathname)) continue;
+    if (route.has && !route.has.every((condition) => condition.type === 'header' && condition.key === 'accept' && new RegExp(condition.value).test(accept))) continue;
+    Object.assign(headers, route.headers);
+    if (!route.continue) return { destination: route.dest, headers };
+  }
+  assert.fail('Routes must reach the filesystem without a catch-all fallback');
+}
+
 test('built pages expose consistent metadata, factual schema and reachable internal links', async () => {
   execFileSync(process.execPath, ['build.mjs'], { cwd: root });
   const documents = new Map(await Promise.all(pages.map(async (name) => [name, await readFile(path.join(root, 'dist', name), 'utf8')])));
@@ -44,14 +58,35 @@ test('built pages expose consistent metadata, factual schema and reachable inter
   assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]), [`${origin}/`, `${origin}/como-funciona.html`]);
   assert.ok((await readFile(path.join(root, 'dist/robots.txt'), 'utf8')).includes(`Sitemap: ${origin}/sitemap.xml`));
   const configuration = JSON.parse(await readFile(path.join(root, 'vercel.json'), 'utf8'));
-  for (const rewrite of configuration.rewrites) {
-    const markdown = await readFile(path.join(root, 'dist', rewrite.destination.slice(1)), 'utf8');
+  assert.equal(configuration.rewrites, undefined);
+  assert.equal(configuration.headers, undefined);
+  assert.deepEqual(configuration.routes.at(-1), { handle: 'filesystem' });
+  assert.equal(configuration.routes.filter((route) => route.handle).length, 1);
+  const negotiatedRoutes = configuration.routes.filter((route) => route.has);
+  assert.equal(negotiatedRoutes.length, 3);
+  for (const rewrite of negotiatedRoutes) {
+    const markdown = await readFile(path.join(root, 'dist', rewrite.dest.slice(1)), 'utf8');
     assert.ok(markdown.startsWith('# '));
     assert.ok(markdown.includes('comercial@trackig.com.br'));
     assert.ok(markdown.includes('sem telemetria real'));
     const matcher = new RegExp(rewrite.has[0].value);
     assert.ok(matcher.test('text/markdown'));
     for (const value of ['text/markdown;q=0', 'text/markdown, text/html', 'text/html', '*/*']) assert.equal(matcher.test(value), false);
+  }
+  for (const pathname of ['/', '/index.html', '/como-funciona.html']) {
+    for (const accept of ['text/markdown', 'text/html', 'text/markdown;q=0', 'text/markdown, text/html', '*/*']) {
+      const resolved = resolvePreFilesystem(configuration, pathname, accept);
+      const markdown = accept === 'text/markdown';
+      assert.equal(resolved.destination, markdown ? (pathname === '/como-funciona.html' ? '/como-funciona.md' : '/index.md') : pathname);
+      assert.equal(resolved.headers.Vary, 'Accept');
+      assert.equal(resolved.headers['Cache-Control'], 'private, no-store');
+      assert.equal(resolved.headers['Content-Type'], markdown ? 'text/markdown; charset=utf-8' : undefined);
+    }
+  }
+  for (const pathname of ['/missing', '/assets/inexistente.png']) {
+    const resolved = resolvePreFilesystem(configuration, pathname, 'text/markdown');
+    assert.equal(resolved.destination, pathname);
+    assert.deepEqual(resolved.headers, {});
   }
   assert.ok((await readFile(path.join(root, 'dist/llms.txt'), 'utf8')).includes(`${origin}/como-funciona.html`));
 });
@@ -84,14 +119,12 @@ test('local HTTP serves crawl resources with correct MIME, supports HEAD and ret
     }
     const configuration = JSON.parse(await readFile(path.join(root, 'vercel.json'), 'utf8'));
     for (const route of ['/', '/index.html', '/como-funciona.html']) {
-      const rewrite = configuration.rewrites.find((entry) => entry.source === route);
-      assert.ok(rewrite, route);
-      const matcher = new RegExp(rewrite.has[0].value);
       for (const accept of ['text/html', 'text/markdown', 'text/html', 'text/markdown;q=0', 'text/markdown, text/html', 'text/markdown']) {
         const response = await fetch(`${address}${route}`, { headers: { Accept: accept }, signal: AbortSignal.timeout(5000) });
         assert.equal(response.status, 200);
         assert.equal(response.headers.get('vary'), 'Accept');
-        const markdown = matcher.test(accept);
+        const resolved = resolvePreFilesystem(configuration, route, accept);
+        const markdown = resolved.destination.endsWith('.md');
         assert.ok(response.headers.get('content-type')?.startsWith(markdown ? 'text/markdown' : 'text/html'), `${route} ${accept}`);
         assert.ok((await response.text()).startsWith(markdown ? '# ' : '<!doctype html>'));
       }
