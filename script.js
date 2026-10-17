@@ -148,3 +148,7 @@ contactForm.querySelector('button[type="submit"]').disabled = false;
 initHeroMobileCarousel();
 
 initTechnologyTracking();
+// Optional motion must not prevent navigation or form setup if its module fails.
+import('./assets/site-motion.js').then(({ initSiteMotion }) => initSiteMotion()).catch(() => {
+  /* The page remains fully visible and functional without this enhancement. */
+});

@@ -24,6 +24,12 @@ Ao importar o repositório na Vercel, use a raiz do projeto e as configurações
 
 Não são necessárias variáveis de ambiente. O site é estático; os contatos e os valores da seção Operação são os conteúdos já fornecidos. A área do cliente continua com o aviso de desenvolvimento.
 
+## Animações da interface
+
+`assets/site-motion.js` e `assets/site-motion.css` acrescentam entradas de 450–600 ms na HERO e nas seções Tecnologia, Operação, Contato e rodapé, com sequência de até 240 ms. Cada elemento aparece uma vez ao entrar na tela; cards, botões, ícones, campos, menu e conteúdo do diálogo têm microinterações. A barra decorativa no topo acompanha a leitura, e as âncoras usam a rolagem suave nativa. Não há biblioteca, novos loops contínuos, contadores ou alteração dos dados.
+
+O conteúdo permanece visível sem JavaScript, IntersectionObserver ou Web Animations. Foco e destinos de âncoras cancelam as entradas pendentes; movimento reduzido, inclusive quando alterado durante a visita, cancela as animações e desativa deslocamentos e rolagem suave. O progresso usa listener passivo e no máximo um frame pendente, com a altura medida separadamente. As animações existentes do carrossel e do veículo mantêm seus controles próprios.
+
 ## Destinos comerciais
 
 Os dois CTAs da HERO abrem o WhatsApp oficial fornecido, +55 85 99131-8582, em nova aba com `noopener noreferrer`. Os destinos ficam em `TRACKIG_CONFIG`, no início de `script.js`; as âncoras HTML mantêm o endereço para funcionar também sem JavaScript. Contato navega para o formulário da quarta seção. A área do cliente abre um aviso de que está em desenvolvimento. Soluções leva à seção Tecnologia. Seu CTA abre uma explicação sobre rastreamento em tempo real, histórico e alertas, sem simular uma integração operacional. Como funciona mantém o aviso de apresentação em preparação.

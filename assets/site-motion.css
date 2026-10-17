@@ -1,0 +1,35 @@
+/* Progressive enhancement: pending scroll content is always visible. */
+.site-scroll-progress{position:fixed;inset:0 0 auto;height:3px;background:#1680ff;box-shadow:0 0 8px #1680ff66;transform:scaleX(0);transform-origin:left center;pointer-events:none;z-index:9}
+.site-scroll-progress[hidden]{display:none}
+
+@media(prefers-reduced-motion:no-preference){
+  html.site-motion-ready:not(.site-motion-reduced){scroll-behavior:smooth}
+  .cta,.customer-button,.technology-cta,.contact-submit,.dialog-confirm,.footer-socials button{transition:background .22s ease,border-color .22s ease,box-shadow .22s ease,translate .22s ease}
+  .cta-primary svg,.technology-cta svg,.contact-submit-arrow,.customer-button svg,.footer-socials svg,.technology-feature-icon{transition:translate .24s ease,scale .24s ease}
+  .cta-primary:is(:hover,:focus-visible) svg,.technology-cta:is(:hover,:focus-visible) svg,.contact-submit:is(:hover,:focus-visible) .contact-submit-arrow{translate:4px 0}
+  .cta:is(:hover,:focus-visible),.customer-button:is(:hover,:focus-visible),.technology-cta:is(:hover,:focus-visible),.contact-submit:is(:hover,:focus-visible),.dialog-confirm:is(:hover,:focus-visible){translate:0 -2px;box-shadow:0 9px 24px #0064ff24}
+  .cta:active,.customer-button:active,.technology-cta:active,.contact-submit:active,.dialog-confirm:active{translate:0 0}
+  .customer-button:is(:hover,:focus-visible) svg,.footer-socials button:is(:hover,:focus-visible) svg{scale:1.08}
+  .technology-features li,.operation-card{transition:translate .28s ease,box-shadow .28s ease,border-color .28s ease}
+  .technology-features li:hover,.operation-card:hover{translate:0 -4px;box-shadow:0 12px 28px #005cff1a;border-color:#458cef}
+  .technology-features li:hover .technology-feature-icon{translate:0 -3px}
+  .contact-input{transition:border-color .22s ease,box-shadow .22s ease,background .22s ease}
+  .contact-field-icon{transition:stroke .22s ease}
+  .contact-control:focus-within .contact-field-icon{stroke:#005cff}
+  .contact-input:focus{box-shadow:0 4px 18px #005cff14}
+  .menu-toggle span{transition:transform .24s ease,opacity .18s ease}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .main-nav a,.main-nav button,.footer-links a,.footer-links button,.footer-contact-list a{transition:color .22s ease,text-decoration-color .22s ease;text-decoration:underline;text-underline-offset:6px;text-decoration-color:transparent}
+  .main-nav :is(a,button):is(:hover,:focus-visible),.footer-links :is(a,button):is(:hover,:focus-visible),.footer-contact-list a:is(:hover,:focus-visible){text-decoration-color:currentColor}
+}
+
+/* Both the OS preference and its live JS state remove movement immediately. */
+html.site-motion-reduced{scroll-behavior:auto}
+html.site-motion-reduced :is(.cta,.customer-button,.technology-cta,.contact-submit,.dialog-confirm,.footer-socials button,.technology-features li,.operation-card,.technology-feature-icon,.footer-socials svg,.cta svg,.technology-cta svg,.contact-submit-arrow,.customer-button svg){translate:none;scale:none;transition:none}
+html.site-motion-reduced .menu-toggle span{transform:none;opacity:1;transition:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cta,.customer-button,.technology-cta,.contact-submit,.dialog-confirm,.footer-socials button,.technology-features li,.operation-card,.contact-input,.contact-field-icon,.menu-toggle span{transition:none}
+}
