@@ -1,5 +1,19 @@
 {
   "framework": null,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "destination": "/index.md" },
+    { "source": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "destination": "/index.md" },
+    { "source": "/como-funciona.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "destination": "/como-funciona.md" }
+  ],
+  "headers": [
+    { "source": "/", "headers": [{ "key": "Vary", "value": "Accept" }, { "key": "Cache-Control", "value": "private, no-store" }] },
+    { "source": "/index.html", "headers": [{ "key": "Vary", "value": "Accept" }, { "key": "Cache-Control", "value": "private, no-store" }] },
+    { "source": "/como-funciona.html", "headers": [{ "key": "Vary", "value": "Accept" }, { "key": "Cache-Control", "value": "private, no-store" }] },
+    { "source": "/", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] },
+    { "source": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] },
+    { "source": "/como-funciona.html", "has": [{ "type": "header", "key": "accept", "value": "^\\s*text/markdown\\s*$" }], "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] },
+    { "source": "/:path*.md", "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] }
+  ]
 }

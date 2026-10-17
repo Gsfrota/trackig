@@ -4,8 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#03070a">
-  <meta name="description" content="TrackIG. Seu veículo mais seguro, onde você estiver. Tecnologia de rastreamento que te mantém no controle.">
-  <title>TrackIG — Controle total em tempo real</title>
+  <meta name="description" content="Conheça o rastreamento veicular TrackIG: localização em tempo real, histórico de trajetos e alertas para veículos, financiamento, securitizadoras e frotas.">
+  <title>TrackIG — Rastreamento veicular e gestão de frotas</title>
+  <link rel="canonical" href="https://www.trackig.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="TrackIG">
+  <meta property="og:title" content="TrackIG — Rastreamento veicular e gestão de frotas">
+  <meta property="og:description" content="Localização em tempo real, histórico de trajetos e alertas. Conheça a tecnologia TrackIG e fale com a equipe comercial.">
+  <meta property="og:url" content="https://www.trackig.com.br/">
+  <meta property="og:image" content="https://www.trackig.com.br/assets/hero-background.png">
+  <meta property="og:image:alt" content="Cenário ilustrativo da TrackIG para rastreamento veicular.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TrackIG — Rastreamento veicular e gestão de frotas">
+  <meta name="twitter:description" content="Localização em tempo real, histórico de trajetos e alertas. Conheça a tecnologia TrackIG e fale com a equipe comercial.">
+  <meta name="twitter:image" content="https://www.trackig.com.br/assets/hero-background.png">
+  <meta name="twitter:image:alt" content="Cenário ilustrativo da TrackIG para rastreamento veicular.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.trackig.com.br/#organization", "name": "TrackIG", "url": "https://www.trackig.com.br/", "email": "comercial@trackig.com.br", "telephone": "+5585991318582", "areaServed": { "@type": "Country", "name": "Brasil" } },
+      { "@type": "WebSite", "@id": "https://www.trackig.com.br/#website", "url": "https://www.trackig.com.br/", "name": "TrackIG", "inLanguage": "pt-BR", "publisher": { "@id": "https://www.trackig.com.br/#organization" } },
+      { "@type": "WebPage", "@id": "https://www.trackig.com.br/#webpage", "url": "https://www.trackig.com.br/", "name": "TrackIG — Rastreamento veicular e gestão de frotas", "description": "Conheça o rastreamento veicular TrackIG: localização em tempo real, histórico de trajetos e alertas para veículos, financiamento, securitizadoras e frotas.", "inLanguage": "pt-BR", "isPartOf": { "@id": "https://www.trackig.com.br/#website" }, "about": { "@id": "https://www.trackig.com.br/#organization" } }
+    ]
+  }
+  </script>
   <link rel="preload" href="assets/hero-headline.svg" as="image" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
@@ -25,7 +49,7 @@
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <a class="active" href="#inicio" aria-current="page">Início</a>
         <a href="#tecnologia">Soluções</a>
-        <button type="button" data-info="how">Como funciona</button>
+        <a href="como-funciona.html">Como funciona</a>
         <a href="#contato">Contato</a>
       </nav>
       <button class="customer-button" type="button" data-action="customer"><svg viewBox="0 0 28 30" fill="none" aria-hidden="true"><circle cx="14" cy="8" r="5"/><path d="M4 27v-3a10 10 0 0 1 20 0v3"/></svg><span>Área do cliente</span></button>
@@ -74,7 +98,7 @@
         <li><span class="technology-feature-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="m6 27 8-15 10 10 7-15" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><circle cx="6" cy="27" r="4" fill="currentColor"/><circle cx="14" cy="12" r="4" fill="currentColor"/><circle cx="24" cy="22" r="4" fill="currentColor"/><circle cx="31" cy="7" r="4" fill="currentColor"/></svg></span><div><h3>HISTÓRICO DE TRAJETOS</h3><p>Consulte deslocamentos anteriores.</p></div></li>
         <li><span class="technology-feature-icon" aria-hidden="true"><svg viewBox="0 0 34 36" fill="none"><path d="M6 27h22l-3-5v-8a8 8 0 0 0-16 0v8l-3 5ZM14 31a3 3 0 0 0 6 0M17 3V1" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>ALERTAS INTELIGENTES</h3><p>Saiba quando um evento exige atenção.</p></div></li>
       </ul>
-      <button class="technology-cta" type="button" data-info="technology"><span>EXPLORAR A TECNOLOGIA</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17M14 5l7 7-7 7"/></svg></button>
+      <a class="technology-cta" href="como-funciona.html#recursos"><span>EXPLORAR A TECNOLOGIA</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h17M14 5l7 7-7 7"/></svg></a>
     </div>
   </section>
   <section class="operation-section" id="operacao" aria-labelledby="operation-heading">
@@ -150,7 +174,7 @@
       </nav>
       <div class="footer-column footer-company">
         <h2>EMPRESA</h2>
-        <ul class="footer-links"><li><a href="#operacao">Sobre</a></li><li><button type="button" data-info="privacy">Privacidade</button></li><li><button type="button" data-info="terms">Termos de uso</button></li></ul>
+        <ul class="footer-links"><li><a href="como-funciona.html">Como funciona</a></li><li><button type="button" data-info="privacy">Privacidade</button></li><li><button type="button" data-info="terms">Termos de uso</button></li></ul>
       </div>
       <div class="footer-column footer-contact">
         <h2>CONTATO</h2>

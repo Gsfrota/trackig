@@ -1,0 +1,16 @@
+# TrackIG
+
+> Site comercial de tecnologia de rastreamento veicular, com localização em tempo real, histórico de trajetos e alertas. Apresenta soluções para veículos, financiamento, securitizadoras e frotas no Brasil.
+
+## Conteúdo
+
+- [Página inicial](https://www.trackig.com.br/): apresentação, tecnologia, operação e contato.
+- [Como funciona](https://www.trackig.com.br/como-funciona.html): recursos e perguntas frequentes.
+- [Página inicial em Markdown](https://www.trackig.com.br/index.md)
+- [Como funciona em Markdown](https://www.trackig.com.br/como-funciona.md)
+
+## Contato e limites
+
+Os recursos e perguntas frequentes descrevem o conteúdo público. Dúvidas comerciais sobre a solução podem ser tratadas pelo WhatsApp +55 85 99131-8582 (https://wa.me/5585991318582) ou email comercial@trackig.com.br.
+
+Mapa, celular e dados da animação são ilustrativos, sem telemetria real. A área do cliente está em desenvolvimento. O site não publica preços, condições de contratação ou endereço de acesso à área do cliente. Não disponibiliza API ou ações transacionais para agentes.

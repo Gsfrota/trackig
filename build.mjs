@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const output = path.resolve(root, 'dist');
-const pages = ['index.html', 'styles.css', 'script.js'];
+const pages = ['index.html', 'como-funciona.html', 'index.md', 'como-funciona.md', 'llms.txt', 'styles.css', 'script.js', 'robots.txt', 'sitemap.xml'];
 
 // Validate the fixed, direct child before any recursive removal.
 if (path.dirname(output) !== root || path.basename(output) !== 'dist') {
